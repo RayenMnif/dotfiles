@@ -199,7 +199,7 @@ client.background       #ffffff
 
 exec feh --bg-fill ~/Pictures/Wallpapers/thumb-1920-1081932.jpg
 exec_always autotiling -w 1 3 5 7 9
-exec --no-startup-id picom
+exec_always --no-startup-id picom
 exec numlockx
 exec  xinput set-prop "ELAN0718:00 04F3:30FD Touchpad" "libinput Tapping Enabled" 1
 
