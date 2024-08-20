@@ -1,0 +1,17 @@
+#!/bin/bash
+
+alias neofetch='fastfetch'
+alias v='nvim'
+alias tree='exa --tree'
+alias ls='exa'
+alias vim='nvim'
+alias cat='bat -p'
+alias zrc='vim ~/.zshrc'
+alias sysupdate='sudo pacman -Syu'
+alias hs='history | grep '
+alias hsi='history | grep -i '
+alias python='python3'
+alias fcat='cat $(fzf)'
+alias minecraft='sudo java -jar ~/TLauncher.v10/TLauncher.jar &> /dev/null'
+alias updatemirror='sudo reflector --verbose --latest 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
+alias neofetch='fastfetch'
