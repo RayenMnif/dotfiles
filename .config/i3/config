@@ -208,5 +208,5 @@ for_window [class="^.*"] border pixel
 
 # custumized bindings
 bindsym $mod+e exec alacritty --working-directory='/home/rayen/code' -e nvim
-bindsym $mod+Tab+p exec poweroff
-bindsym $mod+Tab+r exec reboot
+bindsym $mod+Ctrl+p exec poweroff
+bindsym $mod+Ctrl+r exec reboot
