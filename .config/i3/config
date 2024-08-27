@@ -36,8 +36,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 # Screen 
-bindsym XF86MonBrightnessUp exec brightnessctl set 10%+
-bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -201,12 +201,15 @@ exec feh --bg-fill ~/Pictures/Wallpapers/thumb-1920-1081932.jpg
 exec_always autotiling -w 1 3 5 7 9
 exec_always --no-startup-id picom
 exec numlockx
-exec  xinput set-prop "ELAN0718:00 04F3:30FD Touchpad" "libinput Tapping Enabled" 1
+exec_always  xinput set-prop "ELAN0718:00 04F3:30FD Touchpad" "libinput Tapping Enabled" 1
 exec_always --no-startup-id /usr/bin/kdeconnect-indicator
 
 for_window [class="^.*"] border pixel 
 
 # custumized bindings
 bindsym $mod+e exec alacritty --working-directory='/home/rayen/code' -e nvim
-bindsym $mod+Ctrl+p exec poweroff
+bindsym $mod+Shift+p exec poweroff
 bindsym $mod+Ctrl+r exec reboot
+bindsym $mod+c exec dunstctl close
+bindsym $mod+Ctrl+c exec dunstctl close-all
+
