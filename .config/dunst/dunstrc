@@ -340,6 +340,7 @@
     #default_icon = /path/to/icon
 
 [urgency_normal]
+    highlight = "#16a085"
     background = "#0c0f16"
     foreground = "#ffffff"
     timeout = 10
