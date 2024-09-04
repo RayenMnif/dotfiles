@@ -1,0 +1,22 @@
+#!/bin/sh
+
+case $1 in
+	up)
+        brightnessctl set 5%+
+		;;
+	down)
+        brightnessctl set 5%-
+		;;
+esac
+
+BRIGHTNESS=$(brightnessctl | grep -oP '\(\d+%\)' | sed 's/[()%]//g')
+
+
+send_notification() {
+	if [ "$BRIGHTNESS" -lt 33 ]; then ICON="/home/rayen/.local/share/icons/brightness-low.png"; elif [ "$BRIGHTNESS" -lt 66 ]; then ICON="/home/rayen/.local/share/icons/brightness-medium.png"; else ICON="/home/rayen/.local/share/icons/brightness-full.png"; fi
+    TEXT="Currently at ${BRIGHTNESS}%"
+
+	dunstify -a "Brightness" -r 9993 -h int:value:"$BRIGHTNESS" -i "$ICON" "Volume" "$TEXT" -t 2000
+}
+
+send_notification
