@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+feh --bg-fill /home/rayen/Pictures/Wallpapers/$(ls ~/Pictures/Wallpapers | rofi -dmenu -no-show-icons | xargs)
