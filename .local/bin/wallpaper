@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 SIZE=$(($(ls ~/Pictures/Wallpapers | wc -l) * 32))
-WALLPAPER=$(ls ~/Pictures/Wallpapers | rofi -dmenu -theme-str "window {height: $SIZE px;}" -no-show-icons | xargs)
+WALLPAPER=$(ls ~/Pictures/Wallpapers | while read A ; do  echo -en "$A\x00icon\x1f~/Pictures/Wallpapers/$A\n"; done | rofi -dmenu -theme-str  "window { height: ${SIZE}px; width: 400px; } " -p "Choose wallpaper" )
 
 feh --bg-fill /home/rayen/Pictures/Wallpapers/$WALLPAPER
