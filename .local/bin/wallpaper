@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-feh --bg-fill /home/rayen/Pictures/Wallpapers/$(ls ~/Pictures/Wallpapers | rofi -dmenu -no-show-icons | xargs)
+SIZE=$(($(ls ~/Pictures/Wallpapers | wc -l) * 32))
+WALLPAPER=$(ls ~/Pictures/Wallpapers | rofi -dmenu -theme-str "window {height: $SIZE px;}" -no-show-icons | xargs)
+
+feh --bg-fill /home/rayen/Pictures/Wallpapers/$WALLPAPER

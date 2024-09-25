@@ -218,4 +218,4 @@ bindsym $mod+Shift+i exec rofi -modi nerdy -show nerdy -no-show-icons
 bindsym $mod+Ctrl+r exec reboot
 bindsym $mod+c exec dunstctl close
 bindsym $mod+Ctrl+c exec dunstctl close-all
-
+bindsym $mod+w exec --no-startup-id sh /home/rayen/.local/bin/wallpaper
