@@ -106,3 +106,8 @@ source $ZSH/oh-my-zsh.sh
 source ~/.dotfiles/aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# flutter
+export ANDROID_HOME=$HOME/android-sdk
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
