@@ -12,6 +12,8 @@
 set $mod Mod1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
+font pango:DroidSansM Nerd Font 11px
+
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
