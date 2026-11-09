@@ -1,0 +1,44 @@
+window {
+border-radius: 15px;
+width: 400px;
+height: 200px;
+margin: 0px;
+border: 1px solid #16a085;
+background-color: rgba(12, 15, 22, 0.5);
+}
+
+#input {
+border-radius: 8px;
+margin: 5px;
+border: none;
+color: white;
+background-color: rgba(22, 160, 133, 0.1);
+}
+#inner-box {
+margin: 5px;
+border-radius: 8px;
+border: none;
+background-color: rgba(12, 15, 22, 0.5);
+}
+
+#outer-box {
+border-radius: 8px;
+margin: 5px;
+border: none;
+background-color: rgba(12, 15, 22, 0.5);
+}
+
+#scroll {
+margin: 0px;
+border: none;
+}
+
+#text {
+margin: 5px;
+border: none;
+color: white;
+}
+
+#entry:selected {
+background-color: rgba(22, 160, 133, 0.1);
+}

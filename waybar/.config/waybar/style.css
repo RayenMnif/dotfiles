@@ -1,0 +1,205 @@
+* {
+  border: none;
+  font-family: "Hack Nerd Font";
+  /* adjust font-size value to your liking: */
+  font-size: 13px;
+
+  min-height: 0;
+}
+
+window#waybar {
+  margin: 5px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+}
+
+#workspaces button {
+  color: #ffffff;
+  border-radius: 0px; 
+}
+
+#workspaces button:hover {
+  background: #0f1e1d;
+}
+
+#workspaces button.active{
+  background-color: #31AB88;
+  color: black;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+
+#mode {
+  background-color: #64727d;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd {
+  padding: 0 9px;
+  margin: 6px 3px;
+  color: #16a085;
+}
+
+#tray menu{
+    margin-top: 60px;
+}
+
+#window,
+#workspaces {
+  margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+#clock {
+  background-color: #16a085;
+  color: black;
+}
+
+#battery {
+  background-color: #16a085;
+  color: black;
+}
+
+#battery.charging {
+  color: #ffffff;
+  background-color: #16a085;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: #16a085;
+}
+
+#cpu {
+  background-color: #16a085;
+  color: #000000;
+}
+
+#memory {
+  background-color: #16a085;
+  color: black;
+}
+
+#backlight {
+  background-color: #16a085;
+  color: black;
+}
+
+#network {
+  background-color: #16a085;
+  color: black;
+}
+
+#network.disconnected {
+  background-color: #f53c3c;
+}
+
+#pulseaudio {
+  background-color: #16a085;
+  color: #000000;
+}
+
+#pulseaudio.muted {
+  background-color: #16a085;
+  color: #000000;
+}
+
+#custom-media {
+  background-color: #66cc99;
+  color: #2a5c45;
+  min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+  background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+  background-color: #ffa000;
+}
+
+#temperature {
+  background-color: #16a085;
+  color: black;
+}
+
+#temperature.critical {
+  background-color: #eb4d4b;
+  color: black;
+}
+
+#tray {
+  background-color: #2980b9;
+}
+
+#idle_inhibitor {
+  background-color: #2d3436;
+}
+
+#idle_inhibitor.activated {
+  background-color: #ecf0f1;
+  color: #2d3436;
+}
+
+#mpd {
+  background-color: #66cc99;
+  color: #2a5c45;
+}
+
+#mpd.disconnected {
+  background-color: #f53c3c;
+}
+
+#mpd.stopped {
+  background-color: #90b1b1;
+}
+
+#mpd.paused {
+  background-color: #51a37a;
+}
+
+#language {
+  background: #bbccdd;
+  color: #333333;
+  padding: 0 5px;
+  margin: 6px 3px;
+  min-width: 16px;
+}
