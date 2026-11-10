@@ -1,4 +1,5 @@
 vim.opt.clipboard = 'unnamedplus'
+vim.opt.autoread = true
 
 -- Tab
 vim.opt.tabstop = 4
@@ -19,10 +20,3 @@ vim.opt.incsearch = true
 vim.opt.hlsearch = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-
-
-vim.opt.autoread = true
-vim.opt.updatetime = 1000
-vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
-  command = "silent! checktime",
-})
