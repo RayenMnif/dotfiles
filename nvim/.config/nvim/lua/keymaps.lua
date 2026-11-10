@@ -1,10 +1,15 @@
+-- Agents
 vim.keymap.set("n", "<leader>oc", "<cmd>vsplit | terminal opencode<cr>i", { desc = "opencode" })
 vim.keymap.set("n", "<leader>cd", "<cmd>vsplit | terminal codex<cr>i", { desc = "codex" })
 vim.keymap.set("t", "<C-\\><C-\\>", "<C-\\><C-n>", { desc = "Leave terminal mode" })
-vim.keymap.set("n", "<leader>tt", function()
+
+-- Terminal
+local function OpenTerm()
   vim.cmd("botright 15split | terminal")
   vim.cmd("startinsert")
-end, { desc = "Terminal (bottom)" })
+end
+vim.keymap.set("n", "<leader>tt", OpenTerm, { desc = "Terminal (bottom)" })
+vim.keymap.set("n", "<C-j>", OpenTerm, { desc = "Terminal (bottom)" })
 
 vim.keymap.set("n", "<leader>tv", function()
   vim.cmd("botright vsplit | terminal")
