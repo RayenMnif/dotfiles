@@ -313,7 +313,7 @@ hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("killall waybar && waybar"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({mode = "maximized", action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({mode = "fullscreen", action = "toggle" }))
 hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m window --output-folder ~/Pictures/Screenshots"))
-hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m output --output-folder ~/screenshot"))
+hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m output --output-folder ~/Pictures/Screenshots/"))
 hl.bind(mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region --output-folder ~/Pictures/Screenshots"))
 
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
