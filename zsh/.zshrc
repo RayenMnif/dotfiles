@@ -103,6 +103,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+cf() {
+    local tag="$1"
+    shift
+    local name=$(echo "$*" | sed -E 's/[^a-zA-Z0-9]+/ /g' | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)}1' OFS="")
+    local file="${tag}-${name}.cpp"
+    [ ! -f "$file" ] && command cp ~/competitive-programming/library/boilerplate.cpp "$file"
+    nvim "$file"
+}
+
 source ~/.dotfiles/aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
