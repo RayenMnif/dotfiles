@@ -32,7 +32,7 @@ hl.monitor({
     output   = "HDMI-A-1",
     mode     = "1920x1080@60",
     position = "auto",
-    scale    = 1.2,
+    scale    = 1,
 })
 
 
@@ -75,7 +75,8 @@ end)
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
-hl.env("AQ_DRM_DEVICES", "/dev/dri/card1:/dev/dri/card0")
+-- Hybrid GPU: card1 = AMD iGPU (eDP-1), card2 = NVIDIA dGPU (HDMI-A-1)
+hl.env("AQ_DRM_DEVICES", "/dev/dri/card1:/dev/dri/card2")
 hl.env("LIBVA_DRIVER_NAME", "nvidia")
 hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 hl.env("NVD_BACKEND", "direct")
