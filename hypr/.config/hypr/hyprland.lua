@@ -35,6 +35,14 @@ hl.monitor({
     scale    = 1,
 })
 
+-- Pin workspaces: 1-2 on the laptop panel, 3-4 on the external monitor
+for _, ws in ipairs({ "1", "2" }) do
+    hl.workspace_rule({ workspace = ws, monitor = "eDP-1" })
+end
+for _, ws in ipairs({ "3", "4" }) do
+    hl.workspace_rule({ workspace = ws, monitor = "HDMI-A-1" })
+end
+
 
 ---------------------
 ---- MY PROGRAMS ----
@@ -76,14 +84,12 @@ end)
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 -- Hybrid GPU: card1 = AMD iGPU (eDP-1), card2 = NVIDIA dGPU (HDMI-A-1)
-hl.env("AQ_DRM_DEVICES", "/dev/dri/card1:/dev/dri/card2")
-hl.env("LIBVA_DRIVER_NAME", "nvidia")
-hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+hl.env("AQ_DRM_DEVICES", "/dev/dri/card1:/dev/dri/card0")
 hl.env("NVD_BACKEND", "direct")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
-hl.config({ cursor = { no_hardware_cursors = true } })
+hl.config({ cursor = { no_hardware_cursors = false } })
 
 
 -----------------------
@@ -272,6 +278,14 @@ hl.gesture({
 hl.device({
     name        = "epic-mouse-v1",
     sensitivity = -0.5,
+})
+
+-- The SINO WEALTH keyboard exposes a second, phantom "Keyboard" HID interface.
+-- Hyprland tracks it as its own keyboard and it desyncs caps/modifier state
+-- (types uppercase with caps lock off). It emits no key events; hide it.
+hl.device({
+    name    = "sino-wealth-gaming-kb--keyboard",
+    enabled = false,
 })
 
 

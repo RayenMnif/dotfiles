@@ -3,8 +3,18 @@ return {
   dependencies = { "nvim-lua/plenary.nvim" },
   cmd = "Telescope",   -- only loads when you run :Telescope
   keys = {
-    { "<leader>ff", function() require("telescope.builtin").find_files() end, desc = "Find files" },
-    { "<leader>fg", function() require("telescope.builtin").live_grep() end,  desc = "Live grep" },
+    { "<leader>ff", function() require("telescope.builtin").find_files({ hidden = true }) end, desc = "Find files" },
+    {
+      "<leader>fg",
+      function()
+        require("telescope.builtin").live_grep({
+          additional_args = function()
+            return { "--hidden", "--glob", "!.git/**", "--glob", "!node_modules/**" }
+          end,
+        })
+      end,
+      desc = "Live grep",
+    },
     { "<leader>fb", function() require("telescope.builtin").buffers() end,    desc = "Buffers" },
     { "<leader>fh", function() require("telescope.builtin").help_tags() end,  desc = "Help tags" },
     -- optional extras
